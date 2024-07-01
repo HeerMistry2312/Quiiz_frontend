@@ -1,0 +1,5 @@
+@import "/src/assets/scss/variables";
+
+.card:hover {
+  background-color: $card_hover;
+}

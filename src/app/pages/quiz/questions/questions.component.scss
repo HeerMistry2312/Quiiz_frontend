@@ -1,0 +1,13 @@
+@import '/src/assets/scss/variables';
+
+label.default-answer {
+  color: $default;
+}
+
+label.correct-answer {
+  color: $true_answer;
+}
+
+label.wrong-answer {
+  color: $false_answer;
+}

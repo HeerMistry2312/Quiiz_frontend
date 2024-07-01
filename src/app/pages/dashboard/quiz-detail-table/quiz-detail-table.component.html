@@ -1,0 +1,23 @@
+<table class="table table-hover border shadow rounded" *ngIf="attempts.length > 0; else noQuizzes">
+  <thead>
+    <tr class="fs-5 fw-bold text-center">
+      <th scope="col">Quiz Id</th>
+      <th scope="col">Quiz Title</th>
+      <th scope="col">Score</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="fs-6 text-center" *ngFor="let quiz of attempts">
+      <th scope="row">{{quiz.quizId}}</th>
+      <td>{{quiz.quizTitle}}</td>
+      <td>{{quiz.score}}</td>
+      <td><button type="button" class="btn btn-success" (click)="showQuiz(quiz.quizId)">Show Quiz</button></td>
+    </tr>
+  </tbody>
+</table>
+<ng-template #noQuizzes>
+  <div class="alert alert-success fs-5 text-center mt-3" role="alert">
+    No quizzes are available.
+  </div>
+</ng-template>

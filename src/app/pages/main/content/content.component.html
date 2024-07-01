@@ -1,0 +1,17 @@
+<div class="container-fluid text-center" *ngIf="userDetail">
+  <div class="row m-3 justify-content-between">
+    <div class="col-lg-6">
+      <div class="container m-2 border-shadow bg-light rounded p-3">
+        <h1><span class="text-success fw-bold">Welcome!</span> {{userDetail.username}}</h1>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="container m-2 border-shadow bg-light rounded p-3">
+        <h1><span class="text-success fw-bold">E-Mail:</span> {{userDetail.email}}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mx-5 my-3">
+  <router-outlet></router-outlet>
+</div>

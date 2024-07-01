@@ -1,0 +1,29 @@
+
+<div class="wrapper bg-light my-3 border rounded shadow" *ngIf="quizDetails">
+  <div class="row p-3 justify-content-center">
+    <h1 class="fs-3 text-center text-success"><b>QuizTitle:</b> {{ quizDetails.title }}</h1>
+    <div class="col-lg-8 text-center">
+      <form #quizForm="ngForm" (ngSubmit)="onSubmit(quizForm)">
+        <div class="m-3 p-3 border question shadow rounded text-center" *ngFor="let question of questions; let i = index">
+          <h2><b class="text-success"><b class="text-danger">*</b> Question: {{ i + 1 }}</b> {{ question.text }} </h2>
+          <div *ngFor="let option of question.options; let j = index" class="option p-3">
+            <input
+              type="radio"
+              id="option{{ i }}{{ j }}"
+              name="question{{ i }}"
+              [(ngModel)]="answers[question.text]"
+              [value]="option"
+              required>
+            <label for="option{{ i }}{{ j }}" class="fs-6"><b>
+              Option: {{j+1}}
+            </b>{{ option }}</label>
+          </div>
+          <div *ngIf="!answers[question.text] && formSubmitted">
+            <small class="text-danger fs-6">Please select an answer.</small>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="!quizForm.valid">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

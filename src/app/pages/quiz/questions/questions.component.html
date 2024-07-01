@@ -1,0 +1,27 @@
+
+<div class="m-3 p-3 border shadow rounded text-center" *ngFor="let question of questions; let i = index">
+  <h2><b class="text-success">Question: {{i+1}}</b> {{question.text}}</h2>
+  <div class="options p-3" *ngFor="let option of question.options; let j = index">
+    <input
+      type="radio"
+      name="option{{i}}"
+      id="option{{i}}{{j}}"
+      [checked]="answers[i]?.userAnswer === option.text"
+      disabled
+    >
+    <label
+      for="option{{i}}{{j}}"
+      class="fs-6"
+      [ngClass]="{
+        'correct-answer': option.isCorrect && answers[i]?.answer === option.text,
+        'wrong-answer': !option.isCorrect && answers[i]?.answer === option.text,
+        'default-answer': answers[i]?.answer !== option.text
+      }"
+    >
+      <b class="px-3">Option: {{j+1}}</b> {{option.text}}
+    </label>
+  </div>
+  <div *ngIf="!isUserAnswerCorrect(i)">
+    <p class="text-success fs-6"><b>Correct answer:</b> {{getCorrectAnswer(i)}}</p>
+  </div>
+</div>

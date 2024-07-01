@@ -1,0 +1,8 @@
+<div class="wrapper bg-light my-3 boreder rounded shadow">
+  <div class="row p-3 justify-content-center ">
+    <h1 class="fs-3 text-center text-success"><b>QuizTitle:</b> {{quizDetail?.title}}</h1>
+    <div class="col-lg-8 text-center">
+      <app-questions [questions]="questions" [answers]="answers"></app-questions>
+    </div>
+  </div>
+</div>

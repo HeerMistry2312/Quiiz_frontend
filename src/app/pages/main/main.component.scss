@@ -1,0 +1,10 @@
+@import '/src/assets/scss/variables';
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: $full-height;
+  app-footer {
+    margin-top: auto;
+  }
+}

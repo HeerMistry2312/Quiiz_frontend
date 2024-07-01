@@ -1,0 +1,10 @@
+<div class="row p-3 justify-content-center" *ngIf="scoreData">
+  <h1 class="fs-3 text-center text-success"></h1>
+  <div class="col-lg-8 text-center">
+    <div class="m-3 p-3 border question shadow rounded text-center">
+      <h2><b class="text-success">{{scoreMessage}}</b></h2>
+      <p class="text-success fs-1 fw-bold p-3">{{scoreData?.score}}</p>
+      <p class="card-text fs-1 fw-bold p-3">{{scoreData?.score}}</p>
+    </div>
+  </div>
+</div>
